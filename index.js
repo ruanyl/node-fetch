@@ -32,6 +32,8 @@ module.exports.default = module.exports;
  */
 function Fetch(url, opts) {
 
+  opts = opts || {};
+
 	// allow call as function
 	if (!(this instanceof Fetch))
 		return new Fetch(url, opts);
@@ -177,7 +179,7 @@ function Fetch(url, opts) {
 				, headers: headers
 				, size: options.size
 				, timeout: options.timeout
-				, disableDecoding: opts.disableDecoding
+				, disableDecoding: opts.disableDecoding !== undefined ? opts.disableDecoding : false
 			};
 
 			// response object
