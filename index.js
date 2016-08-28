@@ -177,6 +177,7 @@ function Fetch(url, opts) {
 				, headers: headers
 				, size: options.size
 				, timeout: options.timeout
+				, disableDecoding: opts.disableDecoding
 			};
 
 			// response object
